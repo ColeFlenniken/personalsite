@@ -1,36 +1,60 @@
-package templates;
+package templates
 
-templ MainPage(){
+import . "github.com/ColeFlenniken/personalsite/models"
+
+templ MainPage() {
     <html>
         <head>
             <title>Personal Website - Cole Flenniken</title>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="css/styles.css">
-            <link rel="stylesheet" href="css/tailwind.css">
-            <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-            
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link rel="stylesheet" href="static/css/styles.css" />
+            <link rel="stylesheet" href="static/css/tailwind.css" />              
+            <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet' />
             <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
         </head>
         <body>
-            <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
-                <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-                  <span class="text-sm text-slate-600 font-medium">
-                    <span>Hello! I'm </span><span class="gradient-fill">Cole Flenniken</span>
-                  </span>
+            <div style="height:100px;">
+                <div class="menu-bar">
+                    <a class="menu-bar-button">Button1</a>
+                    <a class="menu-bar-button">Button2</a>
+                    <a class="menu-bar-button">Button3</a>
+
                 </div>
-                
-                <div class="p-4">
-                  <h5 class="mb-2 text-slate-800 text-xl font-semibold">
-                    Website Review Check Update from Our Team in San Francisco
-                  </h5>
-                  <p class="text-slate-600 leading-normal font-light">
-                    I am someone doing things
-                  </p>
+            </div>
+            <div class="grid grid-cols-5">
+                <div class="col-span-2">
+                    @FrontPageCard("<span class='gradient-fill'>Experience</span>", "hello I hope all is weell<a href='https://www.google.com'>Google</a>")
                 </div>
-              </div>
-            
-            
+                <div class="resume-nav ml-2 col-span-3" style="width:90%;">
+                    <div>
+                        <span class="gradient-fill">Experience</span>
+                    </div>
+                    @joblist([]Job{
+                        Job{Role: "Software Engineer", Company: "Google", Date: "2020-2021"},
+                        Job{Role: "Software Engineer", Company: "Facebook", Date: "2019-2020"},
+                        Job{Role: "Software Engineer", Company: "Amazon", Date: "2018-2019"},
+                    })
+                </div>
+            </div>            
         </body>
     </html>
+}
+
+templ joblist(jobs []Job) {
+    for _, job := range jobs {
+        <div style="background-color:grey; height:1px; width:100%;"></div>
+        @jobcard(job)
+    }
+}
+
+templ jobcard(job Job) {
+    <a class="resume-job">
+        <div class="mt-2 mb-2" style="display:flex;justify-content:space-between;">
+          <div><span class="resume-role mb-0">{job.Role}</span>   <span class="resume-date">{job.Date}</span></div>
+            <div style="align-self:flex-start;">
+                <b class="resume-company">{job.Company}</b>
+            </div>
+        </div>
+    </a>
 }
