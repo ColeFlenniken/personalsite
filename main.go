@@ -4,14 +4,15 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/ColeFlenniken/personalsite/templates"
 	"github.com/a-h/templ"
 )
 
 func main() {
-	component := mainpage()
+	component := templates.MainPage()
 
 	http.Handle("/", templ.Handler(component))
-	http.Handle("/css/", http.FileServer(http.Dir("./")))
+	http.Handle("/static/css/", http.StripPrefix("/static/css/", http.FileServer(http.Dir("./static/css"))))
 	fmt.Println("Listening on :8080")
 	http.ListenAndServe(":8080", nil)
 }

@@ -1,18 +1,35 @@
-package main
+package templates;
 
-templ mainpage(){
+templ MainPage(){
     <html>
         <head>
             <title>Personal Website - Cole Flenniken</title>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="css/styles.css">
+            <link rel="stylesheet" href="css/tailwind.css">
             <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-
+            
             <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
         </head>
         <body>
-            <span>Hello! I'm </span><span class="gradient-fill">Cole Flenniken</span>
+            <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+                <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
+                  <span class="text-sm text-slate-600 font-medium">
+                    <span>Hello! I'm </span><span class="gradient-fill">Cole Flenniken</span>
+                  </span>
+                </div>
+                
+                <div class="p-4">
+                  <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+                    Website Review Check Update from Our Team in San Francisco
+                  </h5>
+                  <p class="text-slate-600 leading-normal font-light">
+                    I am someone doing things
+                  </p>
+                </div>
+              </div>
+            
             
         </body>
     </html>
