@@ -31,7 +31,7 @@ func MainPage() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<html><head><title>Personal Website - Cole Flenniken</title><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" href=\"static/css/styles.css\"><link rel=\"stylesheet\" href=\"static/css/tailwind.css\"><link href=\"https://fonts.googleapis.com/css?family=Inter\" rel=\"stylesheet\"><script src=\"https://unpkg.com/htmx.org@2.0.4\" integrity=\"sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+\" crossorigin=\"anonymous\"></script></head><body><div style=\"height:100px;\"><div class=\"menu-bar\"><a class=\"menu-bar-button\">Button1</a> <a class=\"menu-bar-button\">Button2</a> <a class=\"menu-bar-button\">Button3</a></div></div><div class=\"grid grid-cols-5\"><div class=\"col-span-2\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<html><head><title>Personal Website - Cole Flenniken</title><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" href=\"static/css/styles.css\"><link rel=\"stylesheet\" href=\"static/css/tailwind.css\"><link href=\"https://fonts.googleapis.com/css?family=Inter\" rel=\"stylesheet\"><script src=\"https://unpkg.com/htmx.org@2.0.4\" integrity=\"sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+\" crossorigin=\"anonymous\"></script></head><body><div style=\"height:100px;\"><div class=\"menu-bar\"><a class=\"menu-bar-button\">Button1</a> <a class=\"menu-bar-button\">Button2</a> <a class=\"menu-bar-button\">Button3</a></div></div><div class=\"grid grid-cols-5\"><div id=\"dynamiccard\" class=\"col-span-2\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -44,9 +44,9 @@ func MainPage() templ.Component {
 			return templ_7745c5c3_Err
 		}
 		templ_7745c5c3_Err = joblist([]Job{
-			Job{Role: "Software Engineer", Company: "Google", Date: "2020-2021"},
-			Job{Role: "Software Engineer", Company: "Facebook", Date: "2019-2020"},
-			Job{Role: "Software Engineer", Company: "Amazon", Date: "2018-2019"},
+			Job{Role: "Software Engineer", Company: "Google", Date: "2020-2021", Id: "0"},
+			Job{Role: "Software Engineer", Company: "Facebook", Date: "2019-2020", Id: "1"},
+			Job{Role: "Software Engineer", Company: "Amazon", Date: "2018-2019", Id: "2"},
 		}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -94,6 +94,10 @@ func joblist(jobs []Job) templ.Component {
 	})
 }
 
+func buildId(id string) string {
+	return "Card?card=" + id
+}
+
 func jobcard(job Job) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -115,46 +119,59 @@ func jobcard(job Job) templ.Component {
 			templ_7745c5c3_Var3 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<a class=\"resume-job\"><div class=\"mt-2 mb-2\" style=\"display:flex;justify-content:space-between;\"><div><span class=\"resume-role mb-0\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<a hx-target=\"#dynamiccard\" hx-get=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var4 string
-		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(job.Role)
+		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(buildId(job.Id))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 54, Col: 55}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 57, Col: 55}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "</span> <span class=\"resume-date\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "\" class=\"resume-job\"><div class=\"mt-2 mb-2\" style=\"display:flex;justify-content:space-between;\"><div><span class=\"resume-role mb-0\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var5 string
-		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(job.Date)
+		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(job.Role)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 54, Col: 101}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 59, Col: 55}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "</span></div><div style=\"align-self:flex-start;\"><b class=\"resume-company\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "</span> <span class=\"resume-date\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var6 string
-		templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(job.Company)
+		templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(job.Date)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 56, Col: 54}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 59, Col: 101}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, "</b></div></div></a>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, "</span></div><div style=\"align-self:flex-start;\"><b class=\"resume-company\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var7 string
+		templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(job.Company)
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 61, Col: 54}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, "</b></div></div></a>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

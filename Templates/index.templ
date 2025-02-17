@@ -1,7 +1,6 @@
 package templates
 
 import . "github.com/ColeFlenniken/personalsite/models"
-
 templ MainPage() {
     <html>
         <head>
@@ -23,7 +22,7 @@ templ MainPage() {
                 </div>
             </div>
             <div class="grid grid-cols-5">
-                <div class="col-span-2">
+                <div id="dynamiccard" class="col-span-2">
                     @FrontPageCard("<span class='gradient-fill'>Experience</span>", "hello I hope all is weell<a href='https://www.google.com'>Google</a>")
                 </div>
                 <div class="resume-nav ml-2 col-span-3" style="width:90%;">
@@ -31,9 +30,9 @@ templ MainPage() {
                         <span class="gradient-fill">Experience</span>
                     </div>
                     @joblist([]Job{
-                        Job{Role: "Software Engineer", Company: "Google", Date: "2020-2021"},
-                        Job{Role: "Software Engineer", Company: "Facebook", Date: "2019-2020"},
-                        Job{Role: "Software Engineer", Company: "Amazon", Date: "2018-2019"},
+                        Job{Role: "Software Engineer", Company: "Google", Date: "2020-2021", Id : "0"},
+                        Job{Role: "Software Engineer", Company: "Facebook", Date: "2019-2020" ,Id : "1"},
+                        Job{Role: "Software Engineer", Company: "Amazon", Date: "2018-2019", Id: "2"},
                     })
                 </div>
             </div>            
@@ -42,14 +41,20 @@ templ MainPage() {
 }
 
 templ joblist(jobs []Job) {
+ 
     for _, job := range jobs {
         <div style="background-color:grey; height:1px; width:100%;"></div>
+ 
         @jobcard(job)
     }
 }
 
+func buildId(id string) string {
+    return "Card?card=" +  id
+}
+
 templ jobcard(job Job) {
-    <a class="resume-job">
+    <a hx-target="#dynamiccard" hx-get={buildId(job.Id)} class="resume-job">
         <div class="mt-2 mb-2" style="display:flex;justify-content:space-between;">
           <div><span class="resume-role mb-0">{job.Role}</span>   <span class="resume-date">{job.Date}</span></div>
             <div style="align-self:flex-start;">

@@ -4,4 +4,5 @@ type Job struct {
 	Role    string
 	Company string
 	Date    string
+	Id      string
 }
