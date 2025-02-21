@@ -1,7 +1,7 @@
-package templates
-
-import . "github.com/ColeFlenniken/personalsite/models"
-templ MainPage() {
+package Templates
+ 
+ 
+templ MainLayout() {
     <html>
         <head>
             <title>Personal Website - Cole Flenniken</title>
@@ -13,53 +13,35 @@ templ MainPage() {
             <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
         </head>
         <body>
-            <div style="height:100px;">
-                <div class="menu-bar">
-                    <a class="menu-bar-button">Button1</a>
-                    <a class="menu-bar-button">Button2</a>
-                    <a class="menu-bar-button">Button3</a>
-
-                </div>
-            </div>
-            <div class="grid grid-cols-5">
-                <div id="dynamiccard" class="col-span-2">
-                    @FrontPageCard("<span class='gradient-fill'>Experience</span>", "hello I hope all is weell<a href='https://www.google.com'>Google</a>")
-                </div>
-                <div class="resume-nav ml-2 col-span-3" style="width:90%;">
-                    <div>
-                        <span class="gradient-fill">Experience</span>
+                <div style="height:100px; align-content:center;">
+                    <div class="menu-bar">
+                        <a hx-target="#main-body" hx-swap="innerHTML" hx-get="/Index" class="menu-bar-button">Home</a>
+                        <a hx-target="#main-body" hx-swap="innerHTML" hx-get="/Resume" class="menu-bar-button">Resume</a>
+                        <a hx-target="#main-body" hx-swap="innerHTML" hx-get="/Test" class="menu-bar-button">Test</a>
                     </div>
-                    @joblist([]Job{
-                        Job{Role: "Software Engineer", Company: "Google", Date: "2020-2021", Id : "0"},
-                        Job{Role: "Software Engineer", Company: "Facebook", Date: "2019-2020" ,Id : "1"},
-                        Job{Role: "Software Engineer", Company: "Amazon", Date: "2018-2019", Id: "2"},
-                    })
                 </div>
-            </div>            
+            <div id="main-body">
+                   @Index()
+            </div>
+                   
         </body>
     </html>
 }
 
-templ joblist(jobs []Job) {
+templ Index(){
+    <div style="width:500px;height:500px;position: relative;margin: auto;">@NextLetter("","/Index/Letters?ndx=0","appearing-letters-up")</div>
+}
+
  
-    for _, job := range jobs {
-        <div style="background-color:grey; height:1px; width:100%;"></div>
- 
-        @jobcard(job)
+templ NextLetter(letter string, id string, animation string){
+    if id == "-1" {
+		OOF
+	}else{
+        <span class={animation}
+         hx-get={id}  
+         hx-trigger="load delay:0.1s"
+         hx-swap="afterend" 
+         hx-target="closest span">{letter}</span>
     }
 }
 
-func buildId(id string) string {
-    return "Card?card=" +  id
-}
-
-templ jobcard(job Job) {
-    <a hx-target="#dynamiccard" hx-get={buildId(job.Id)} class="resume-job">
-        <div class="mt-2 mb-2" style="display:flex;justify-content:space-between;">
-          <div><span class="resume-role mb-0">{job.Role}</span>   <span class="resume-date">{job.Date}</span></div>
-            <div style="align-self:flex-start;">
-                <b class="resume-company">{job.Company}</b>
-            </div>
-        </div>
-    </a>
-}
