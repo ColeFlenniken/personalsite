@@ -1,5 +1,14 @@
+:root {
+  --primary-color : #ff9bf6;
+  --tertiary-color : #ff1aec;
+  --secondary-color : #444444;
+  --border-color :  #6e6e6e;
+  --background-color : #303030;
+}
+
+
 body {
-  background: #121212;
+  background: var(--background-color);
   font-family: 'Inter';
   font-size: 22px;
 }
@@ -9,9 +18,18 @@ span {
   font-weight: 600;
 }
 
+h2{
+  color: white;
+  font-size: large;
+  font-weight: 700;
+}
 
+p{
+  color:rgb(255, 255, 255);
+  font-weight: 400;
+}
 .gradient-fill {
-  background: linear-gradient(90deg, #ffcd38, #ff69b4);
+  background: linear-gradient(90deg, var(--primary-color), var(--tertiary-color));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -177,5 +195,65 @@ span {
   -webkit-animation: letterappear-down 1s ease-out;
   animation: letterappear-down 1s ease-out ;
 }
+
+
+  .introduction-home-container{
+     margin: 5%;
+     height: 60%;
+  }
+
+
+  .card {
+  width:80%;
+  height:90%;
+  margin: 0 auto;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  z-index: 1;
+  }
+
+  .tools {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+  }
+
+  .file-bar{
+    padding: 9px;
+    display: flex;
+  }
+  .file-item{
+    margin: 4px;
+    font-size: x-small;
+  
+}
+.file-div{
+  color: var(--primary-color);
+ }
+ .circle {
+  padding: 0 4px;
+ }
+ 
+ .box {
+  display: inline-block;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  border-radius: 50%;
+ }
+ 
+ .red {
+  background-color: #ff605c;
+ }
+ 
+ .yellow {
+  background-color: #ffbd44;
+ }
+ 
+ .green {
+  background-color: #00ca4e;
+ }
+
  
  

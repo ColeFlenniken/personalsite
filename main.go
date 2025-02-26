@@ -14,6 +14,7 @@ func main() {
 
 	http.Handle("/", templ.Handler(component))
 	http.Handle("/static/css/", http.StripPrefix("/static/css/", http.FileServer(http.Dir("./static/css"))))
+	http.Handle("/static/scripts/", http.StripPrefix("/static/scripts/", http.FileServer(http.Dir("./static/scripts"))))
 	http.HandleFunc("/Card", func(w http.ResponseWriter, r *http.Request) {
 		API.GetJobCard(w, r)
 	})

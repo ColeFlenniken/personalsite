@@ -13,6 +13,7 @@ templ MainLayout() {
             <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
         </head>
         <body>
+    
                 <div style="height:100px; align-content:center;">
                     <div class="menu-bar">
                         <a hx-target="#main-body" hx-swap="innerHTML" hx-get="/Index" class="menu-bar-button">Home</a>
@@ -29,7 +30,40 @@ templ MainLayout() {
 }
 
 templ Index(){
-    <div style="width:500px;height:500px;position: relative;margin: auto;">@NextLetter("","/Index/Letters?ndx=0","appearing-letters-up")</div>
+    <!--<div style="width:500px;height:500px;position: relative;margin: auto;">@NextLetter("","/Index/Letters?ndx=0","appearing-letters-up")</div>-->
+    <div class="introduction-home-container grid grid-cols-5 gap-1">
+        <div class="col-span-2">
+            <span>Hello I am,</span><br/>
+            <span class="gradient-fill text-5xl">Cole Flenniken</span><br/>
+            <p>I design and develop scalable, high-performance AI solutions that drive efficiency and innovation at the enterprise level.</p>
+        </div>
+        <div class="col-span-3">
+            <div class="card">
+                <div class="tools">
+                  <div class="circle">
+                    <span class="red box"></span>
+                  </div>
+                  <div class="circle">
+                    <span class="yellow box"></span>
+                  </div>
+                  <div class="circle">
+                    <span class="green box"></span>
+                  </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <canvas>
+                            
+                        </canvas>
+                    </div>
+                </div>
+              </div>
+             
+        </div>
+    </div>
+    
+
 }
 
  
