@@ -10,9 +10,16 @@ import (
 )
 
 func main() {
-	component := Templates.MainLayout() // Write the response
 
-	http.Handle("/", templ.Handler(component))
+	http.HandleFunc("/saveCanvas", func(w http.ResponseWriter, r *http.Request) {
+		API.UpdateCanvasData(w, r)
+
+	})
+	http.HandleFunc("/getImageData", func(w http.ResponseWriter, r *http.Request) {
+		API.GetCanvasPixels(w, r)
+	})
+
+	http.Handle("/", templ.Handler(Templates.MainLayout()))
 	http.Handle("/static/css/", http.StripPrefix("/static/css/", http.FileServer(http.Dir("./static/css"))))
 	http.Handle("/static/scripts/", http.StripPrefix("/static/scripts/", http.FileServer(http.Dir("./static/scripts"))))
 	http.HandleFunc("/Card", func(w http.ResponseWriter, r *http.Request) {
@@ -34,6 +41,7 @@ func main() {
 		fmt.Println("HERE")
 		API.GetNextLetter(w, r)
 	})
+
 	fmt.Println("Listening on :8080")
 	http.ListenAndServe(":8080", nil)
 }
