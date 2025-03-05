@@ -604,20 +604,12 @@ video {
   margin-top: 1rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .flex {
   display: flex;
 }
 
 .grid {
   display: grid;
-}
-
-.resize {
-  resize: both;
 }
 
 .grid-cols-1 {
@@ -642,6 +634,11 @@ video {
 
 .border-b {
   border-bottom-width: 1px;
+}
+
+.object-none {
+  -o-object-fit: none;
+     object-fit: none;
 }
 
 .p-4 {

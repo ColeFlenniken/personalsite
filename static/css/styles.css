@@ -50,7 +50,7 @@ p{
   border-radius: 10px;
   top: 50%;
   color:black;
-  background: black;
+  background: var(--secondary-color);
   padding: 20px;
   margin: 20px;
   opacity:0;
@@ -211,8 +211,8 @@ p{
   border-radius: 8px;
   z-index: 1;
   }
+
   .canvas-container {
-    width: 100%;
     max-width: 550px;
     overflow: hidden;
   }
@@ -221,7 +221,7 @@ p{
     display: block;
     max-width: 100%;
     border: 1px solid grey;
-    object-fit:contain;
+     
 }
   .tools {
   display: flex;
