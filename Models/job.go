@@ -10,7 +10,7 @@ type Job struct {
 
 var Jobs = []Job{
 	Job{
-		Id:      "0",
+		Id:      "Job-0",
 		Date:    "2024 - Present",
 		Role:    "Software Developer / AI Engineer",
 		Company: "Textron",
@@ -20,7 +20,7 @@ var Jobs = []Job{
 		},
 	},
 	Job{
-		Id:      "1",
+		Id:      "Job-1",
 		Role:    "Software Developer Intern",
 		Date:    "2023",
 		Company: "Textron Systems",
@@ -31,7 +31,7 @@ var Jobs = []Job{
 		},
 	},
 	Job{
-		Id:      "2",
+		Id:      "Job-2",
 		Role:    "Research Assistant",
 		Date:    "2022-2024",
 		Company: "Baylor University",
