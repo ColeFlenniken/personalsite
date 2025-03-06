@@ -7,26 +7,11 @@ import (
 	"net/http"
 
 	"github.com/ColeFlenniken/personalsite/Templates"
-	"github.com/ColeFlenniken/personalsite/models"
 )
 
 func GetIndex(w http.ResponseWriter, r *http.Request) {
 	Templates.Index().Render(r.Context(), w)
 
-}
-
-func GetResume(w http.ResponseWriter, r *http.Request) {
-	Templates.ResumePage().Render(r.Context(), w)
-}
-
-func GetJobCardHTML(w http.ResponseWriter, r *http.Request) {
-	query := r.URL.Query()
-	id := query.Get("card")
-	for i := 0; i < len(models.Jobs); i++ {
-		if id == models.Jobs[i].Id {
-			Templates.ResumePageCardHTML(models.Jobs[i]).Render(r.Context(), w)
-		}
-	}
 }
 
 type CanvasData struct {
