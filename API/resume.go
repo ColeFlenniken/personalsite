@@ -20,8 +20,16 @@ func GetJobCardHTML(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	for i := 0; i < len(models.Educations); i++ {
-		if id == models.Jobs[i].Id {
+		if id == models.Educations[i].Id {
 			Templates.EducationCardHTML(models.Educations[i]).Render(r.Context(), w)
 		}
 	}
+}
+
+func GetJobs(w http.ResponseWriter, r *http.Request) {
+	Templates.Job(models.Jobs).Render(r.Context(), w)
+}
+
+func GetEducation(w http.ResponseWriter, r *http.Request) {
+	Templates.Education(models.Educations).Render(r.Context(), w)
 }

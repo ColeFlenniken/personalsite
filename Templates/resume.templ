@@ -6,7 +6,7 @@ import "github.com/ColeFlenniken/personalsite/models"
 
 
 templ JobCardHTML(job models.Job){
-    <div class="card-glow-outline relative flex flex-col my-6 rounded-lg">
+    <!--<div class="card-glow-outline relative flex flex-col my-6 rounded-lg">
         <div class="mx-3 mb-0 border-b pt-3 pb-2 px-1 card-glow-title">
             <b>{job.Role}</b>
         </div>
@@ -17,7 +17,7 @@ templ JobCardHTML(job models.Job){
             }
         </ul>
         </div>
-    </div>
+    </div>-->
 }
 
 templ EducationCardHTML(education models.Education){
@@ -27,7 +27,7 @@ templ EducationCardHTML(education models.Education){
         </div>
         <div class="p-4 card-glow-body">
         <ul>
-            for _, item := range job.Points {
+            for _, item := range education.Points {
                 <li>{item}</li>
             }
         </ul>
@@ -36,31 +36,35 @@ templ EducationCardHTML(education models.Education){
 }
 
 
-templ job(jobs []models.Job) {
+templ Job(jobs []models.Job) {
     for _, job := range jobs {
         <div style="background-color:grey; height:1px; width:100%;"></div>
-        <a hx-target="#dynamiccard" hx-get={"/Card?card=" + job.Id} class="resume-job">
-            <div class="mt-2 mb-2 grid grid-cols-1" style="display:flex;justify-content:space-between;">
-              <div class="col-span-1"><span class="resume-role mb-0">{job.Role}</span>   <span class="resume-date">{job.Date}</span></div>
-                <div class="col-span-1" style="align-self:flex-start;">
-                    <b class="resume-company">{job.Company}</b>
-                </div>
-            </div>
-        </a>
+        <div class="mt-2" style="">
+            <div class=""><b class="text-color">{job.Role + " "}</b><span class="primary-color">{"@"+job.Company}</span></div>
+        </div>
+        <div>
+            <span class="text-color-dim text-base">{job.Date}</span>
+        </div>
+        <div class="mb-2 ml-6">
+            <ul>
+                for _, item := range job.Points {
+                    <li class="text-color text-sm">{item}</li>
+                }
+            </ul>
+        </div>
+        
     }
 }
 
 templ Education(educations []models.Education){
     for _, education := range educations {
         <div style="background-color:grey; height:1px; width:100%;"></div>
-        <a hx-target="#dynamiccard" hx-get={"/Card?card=" + education.Id} class="resume-job">
             <div class="mt-2 mb-2 grid grid-cols-1" style="display:flex;justify-content:space-between;">
               <div class="col-span-1"><span class="resume-role mb-0">{education.Degree}</span>   <span class="resume-date">{education.Date}</span></div>
                 <div class="col-span-1" style="align-self:flex-start;">
                     <b class="resume-company">{education.School}</b>
                 </div>
             </div>
-        </a>
     }
 }
  
@@ -71,10 +75,11 @@ templ ResumePage(){
         </div>
         <div class="resume-nav ml-2 col-span-2">
             <div>
-                <span class="gradient-fill">Experience</span>
+                <span hx-get="/Resume/Jobs" hx-target="#resume-items" class="gradient-fill">Experience</span>
+                <span hx-get="/Resume/Education" hx-target="#resume-items" class="gradient-fill ml-4">Education</span>
             </div>
             <div id="resume-items">
-                @job(models.Jobs)
+                @Job(models.Jobs)
             </div>
         </div>
     </div>  

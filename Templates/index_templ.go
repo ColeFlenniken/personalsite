@@ -29,7 +29,7 @@ func MainLayout() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<html><head><title>Personal Website - Cole Flenniken</title><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" href=\"static/css/styles.css\"><link rel=\"stylesheet\" href=\"static/css/tailwind.css\"><link href=\"https://fonts.googleapis.com/css?family=Inter\" rel=\"stylesheet\"><script src=\"https://unpkg.com/htmx.org@2.0.4\" integrity=\"sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+\" crossorigin=\"anonymous\"></script><script src=\"https://unpkg.com/htmx.org@1.9.12/dist/ext/json-enc.js\"></script></head><body><div style=\"height:100px; align-content:center;\"><div class=\"menu-bar\"><a hx-target=\"#main-body\" hx-swap=\"innerHTML\" hx-get=\"/Index\" class=\"menu-bar-button\">Home</a> <a hx-target=\"#main-body\" hx-swap=\"innerHTML\" hx-get=\"/Resume\" class=\"menu-bar-button\">Resume</a> <a hx-target=\"#main-body\" hx-swap=\"innerHTML\" hx-get=\"/Test\" class=\"menu-bar-button\">Test</a></div></div><div id=\"main-body\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<html><head><title>Personal Website - Cole Flenniken</title><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" href=\"static/css/styles.css\"><link rel=\"stylesheet\" href=\"static/css/tailwind.css\"><link href=\"https://fonts.googleapis.com/css?family=Inter\" rel=\"stylesheet\"><script src=\"https://unpkg.com/htmx.org@2.0.4\" integrity=\"sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+\" crossorigin=\"anonymous\"></script><script src=\"https://unpkg.com/htmx.org@1.9.12/dist/ext/json-enc.js\"></script></head><body><div style=\"height:100px; align-content:center;\"><div class=\"menu-bar\"><a hx-target=\"#main-body\" hx-swap=\"innerHTML\" hx-get=\"/Index\" class=\"menu-bar-button\">Home</a> <a hx-target=\"#main-body\" hx-swap=\"innerHTML\" hx-get=\"/Resume\" class=\"menu-bar-button\">Resume</a> <a hx-target=\"#main-body\" hx-swap=\"innerHTML\" hx-get=\"/About\" class=\"menu-bar-button\">About Me</a></div></div><div id=\"main-body\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -66,89 +66,9 @@ func Index() templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<!--<div style=\"width:500px;height:500px;position: relative;margin: auto;\">@NextLetter(\"\",\"/Index/Letters?ndx=0\",\"appearing-letters-up\")</div>--><div class=\"introduction-home-container grid grid-cols-5 gap-1\"><div class=\"col-span-2\"><span>Hello I am,</span><br><span class=\"gradient-fill text-5xl\">Cole Flenniken</span><br><p>I design and develop scalable, high-performance AI solutions that drive efficiency and innovation at the enterprise level.</p></div><div class=\"col-span-3\"><div class=\"card\"><div class=\"tools\"><div class=\"circle\"><span class=\"red box\"></span></div><div class=\"circle\"><span class=\"yellow box\"></span></div><div class=\"circle\"><span class=\"green box\"></span></div></div><div class=\" m-10\"><div class=\"mt-4 canvas-container mv-4\"><canvas id=\"myCanvas\" width=\"550\" height=\"300\" class=\"object-none canvas-style\"></canvas><script>\r\n                            // wait for the content of the window element \r\n                            // to load, then performs the operations. \r\n                            // This is considered best practice. \r\n                            window.addEventListener('load', async ()=>{ \r\n                                document.addEventListener('mousedown', startPainting); \r\n                                document.addEventListener('mouseup', stopPainting); \r\n                                document.addEventListener('mousemove', sketch); \r\n                                setCanvasData();\r\n                                setInterval(setCanvasData, 5100);\r\n                                setInterval(getCanvasData, 1000);\r\n                                \r\n                            }); \r\n                            const c = document.getElementById(\"myCanvas\");\r\n                            const ctx = c.getContext(\"2d\");\r\n                            let coord = {x:0 , y:0};  \r\n   \r\n                            // This is the flag that we are going to use to  \r\n                            // trigger drawing \r\n                            let paint = false; \r\n                                \r\n                            // Updates the coordianates of the cursor when  \r\n                            // an event e is triggered to the coordinates where  \r\n                            // the said event is triggered. \r\n                            function getPosition(event){ \r\n                              coord.x = event.clientX - c.offsetLeft; \r\n                              coord.y = event.clientY - c.offsetTop; \r\n                            } \r\n                              \r\n                            \r\n                            function startPainting(event){ \r\n                              paint = true; \r\n                              getPosition(event); \r\n                            } \r\n                            function stopPainting(){ \r\n                              paint = false; \r\n                            } \r\n                                \r\n                            function sketch(event){ \r\n                              if (!paint) return; \r\n                              ctx.beginPath(); \r\n                              ctx.lineWidth = 2; \r\n                              ctx.lineCap = 'round'; \r\n                              ctx.strokeStyle = 'green'; \r\n                              ctx.moveTo(coord.x, coord.y);\r\n                              getPosition(event); \r\n                              ctx.lineTo(coord.x , coord.y); \r\n                              ctx.stroke(); \r\n                            }\r\n\r\n                            async function setCanvasData() {\r\n                              const url = \"/getImageData\";\r\n                              try{\r\n                                const response = await fetch(url)\r\n                                if(!response.ok){\r\n                                  throw new Error(\"HTTP error \" + response.status);\r\n\r\n                                }\r\n                                const json = await response.json();\r\n                                const imageData = ctx.getImageData(0, 0, c.width, c.height).data;\r\n                                \r\n                                let data = new Uint8ClampedArray(json.pixels)\r\n                                for (let i = 0; i < data.length; i++) {\r\n                                  if(data[i] == 0 && imageData[i] != 0){\r\n                                    data[i] = imageData[i];\r\n                                  }\r\n                      \r\n                                }\r\n                                const imageData2 = new ImageData(data, c.width, c.height);\r\n                                ctx.putImageData(imageData2, 0, 0);\r\n                              }catch (error){\r\n                                console.log(error);\r\n                              }\r\n                              \r\n                            }\r\n                            function getCanvasData() {\r\n                              const imageData = ctx.getImageData(0, 0, c.width, c.height);\r\n                              let pixelarr = Array.from(imageData.data);\r\n                              fetch('/saveCanvas', {\r\n                              method: 'POST',\r\n                              headers: {\r\n                                  'Content-Type': 'application/json',\r\n                              },\r\n                              body: JSON.stringify({\r\n                                  pixels: pixelarr\r\n                              })\r\n                          })\r\n                          .then(response => {\r\n                              if (!response.ok) {\r\n                                  throw new Error('Network response was not ok');\r\n                              }\r\n                              console.log('Canvas data saved successfully');\r\n                          })\r\n                          .catch(error => {\r\n                              console.error('Error saving canvas data:', error);\r\n                          });\r\n                            }\r\n                            </script></div></div></div></div></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<div class=\"introduction-home-container\"><span>Hi my name is,</span><br><span class=\"gradient-fill text-5xl\">Cole Flenniken.</span><br><span>Building AI and Web Applications</span><p>I am a backend-focused software developer and AI engineer,  specializing in scalable and performant solutions.  My work includes anything from optimizing algorithms and developing neural networks.</p></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
-		}
-		return nil
-	})
-}
-
-func NextLetter(letter string, id string, animation string) templ.Component {
-	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
-		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
-		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
-			return templ_7745c5c3_CtxErr
-		}
-		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
-		if !templ_7745c5c3_IsBuffer {
-			defer func() {
-				templ_7745c5c3_BufErr := templruntime.ReleaseBuffer(templ_7745c5c3_Buffer)
-				if templ_7745c5c3_Err == nil {
-					templ_7745c5c3_Err = templ_7745c5c3_BufErr
-				}
-			}()
-		}
-		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var3 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var3 == nil {
-			templ_7745c5c3_Var3 = templ.NopComponent
-		}
-		ctx = templ.ClearChildren(ctx)
-		if id == "-1" {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "OOF")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-		} else {
-			var templ_7745c5c3_Var4 = []any{animation}
-			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var4...)
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<span class=\"")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var5 string
-			templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var4).String())
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 1, Col: 0}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "\" hx-get=\"")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var6 string
-			templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(id)
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 175, Col: 19}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "\" hx-trigger=\"load delay:0.1s\" hx-swap=\"afterend\" hx-target=\"closest span\">")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var7 string
-			templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(letter)
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 178, Col: 41}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, "</span>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
 		}
 		return nil
 	})
