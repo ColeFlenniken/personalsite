@@ -24,10 +24,6 @@ func main() {
 	http.Handle("/static/scripts/", http.StripPrefix("/static/scripts/", http.FileServer(http.Dir("./static/scripts"))))
 	http.Handle("/static/img/", http.StripPrefix("/static/img/", http.FileServer(http.Dir("./static/img"))))
 
-	http.HandleFunc("/Card", func(w http.ResponseWriter, r *http.Request) {
-		API.GetJobCardHTML(w, r)
-	})
-
 	http.HandleFunc("/Resume", func(w http.ResponseWriter, r *http.Request) {
 		API.GetResume(w, r)
 	})

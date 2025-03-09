@@ -15,8 +15,9 @@ var Jobs = []Job{
 		Role:    "Software Developer / AI Engineer",
 		Company: "Textron",
 		Points: []string{
-			"Led development for the Enterprise flagship AI solution",
-			"Identified and developed a solution to a critical bug causing the company website to crash daily",
+			"Led development for the Enterprise flagship AI solution using Blazor and Azure with a plugin based architecture",
+			"Improved documentation retrieval by implementing a RAG system with C#/.Net and Azure",
+			"Identified and developed a solution to a critical cahceing issue causing the company website to crash daily",
 		},
 	},
 	Job{
@@ -26,8 +27,8 @@ var Jobs = []Job{
 		Company: "Textron Systems",
 		Points: []string{
 			"Planned, developed, and integrated an inventory management system to improve peripheral tracking and enable inventory data analysis across 4 locations",
-			"Automated new hire profile error detection and incident creation",
-			"Implemented a badge scanner to support tracking of employees entering the Tech Bar",
+			"Automated new hire profile error detection and incident creation using ansible and Azure",
+			"Developed and implemented a badge scanner to support tracking of employees entering the Tech Bar",
 		},
 	},
 	Job{
@@ -36,6 +37,7 @@ var Jobs = []Job{
 		Date:    "2022-2024",
 		Company: "Baylor University",
 		Points: []string{
+			"Performed statistical analysis on panel data to determine effective levels of mining and development decentralization",
 			"Determined governance structure and execution of 11 different blockchains",
 			"Coded decentralization measures to identify strengths of differing blockchains",
 			"Performed data scraping and statistical analysis to determine the effectiveness of differing blockchains governance structures",

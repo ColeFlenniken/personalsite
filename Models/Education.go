@@ -26,7 +26,7 @@ var Educations = []Education{
 		Id:     "Education-1",
 		Date:   "2021-2024",
 		School: "Baylor University",
-		Degree: "BBA in Management Information Systems with a CS Minor",
+		Degree: "Management Information Systems + CS Minor",
 		GPA:    "4.0",
 		Points: []string{
 			" Accolades: Wacode Hackathon 2nd place, LA CodeSprints 97th place, PwC case competition finalist",
