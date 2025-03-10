@@ -41,6 +41,28 @@ templ Index(){
     </div>
     <div class=" mx-auto w-1/1 justify-center mt-20">
         <h2 class="text-color"><b>Skills</b></h2>
+        <div class="grid grid-cols-3 gap-4">
+            @SkillCard()
+            @SkillCard()
+            @SkillCard()
+            @SkillCard()
+            @SkillCard()
+            @SkillCard()
+        </div>
     </div>
+}
+
+templ SkillCard(){
+    <div class="skill-card">
+  <div class="skill-card-inner">
+    <div class="skill-card-front">
+    <img src="/static/img/c++logo.png"></img>
+    <p>C++</p>
+    </div>
+    <div class="skill-card-back">
+      <p>Programming Language</p>
+    </div>
+  </div>
+</div>
 }
 

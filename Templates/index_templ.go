@@ -66,7 +66,64 @@ func Index() templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<div class=\"container  ml-12 w-3/4 mt-40\"><span class=\"text-color-dim \">Hi my name is,</span><br><span class=\"primary-color text-5xl\" style=\"background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; color: transparent;\">Cole Flenniken.</span><br><span class=\"primary-color\">Building AI and Web Applications</span><p>I am a backend-focused software developer and AI engineer,  specializing in scalable and performant solutions.  My work includes anything from optimizing algorithms and developing neural networks.</p></div><div class=\" mx-auto w-1/1 justify-center mt-20\"><h2 class=\"text-color\"><b>Skills</b></h2></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<div class=\"container  ml-12 w-3/4 mt-40\"><span class=\"text-color-dim \">Hi my name is,</span><br><span class=\"primary-color text-5xl\" style=\"background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; color: transparent;\">Cole Flenniken.</span><br><span class=\"primary-color\">Building AI and Web Applications</span><p>I am a backend-focused software developer and AI engineer,  specializing in scalable and performant solutions.  My work includes anything from optimizing algorithms and developing neural networks.</p></div><div class=\" mx-auto w-1/1 justify-center mt-20\"><h2 class=\"text-color\"><b>Skills</b></h2><div class=\"grid grid-cols-3 gap-4\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = SkillCard().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = SkillCard().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = SkillCard().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = SkillCard().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = SkillCard().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = SkillCard().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "</div></div>")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		return nil
+	})
+}
+
+func SkillCard() templ.Component {
+	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
+		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
+		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
+			return templ_7745c5c3_CtxErr
+		}
+		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
+		if !templ_7745c5c3_IsBuffer {
+			defer func() {
+				templ_7745c5c3_BufErr := templruntime.ReleaseBuffer(templ_7745c5c3_Buffer)
+				if templ_7745c5c3_Err == nil {
+					templ_7745c5c3_Err = templ_7745c5c3_BufErr
+				}
+			}()
+		}
+		ctx = templ.InitializeContext(ctx)
+		templ_7745c5c3_Var3 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var3 == nil {
+			templ_7745c5c3_Var3 = templ.NopComponent
+		}
+		ctx = templ.ClearChildren(ctx)
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<div class=\"skill-card\"><div class=\"skill-card-inner\"><div class=\"skill-card-front\"><img src=\"/static/img/c++logo.png\"></div><div class=\"skill-card-back\"><p>Programming Language</p></div></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
