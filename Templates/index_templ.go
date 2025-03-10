@@ -66,7 +66,7 @@ func Index() templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<div class=\"introduction-home-container\"><span>Hi my name is,</span><br><span class=\"gradient-fill text-5xl\">Cole Flenniken.</span><br><span>Building AI and Web Applications</span><p>I am a backend-focused software developer and AI engineer,  specializing in scalable and performant solutions.  My work includes anything from optimizing algorithms and developing neural networks.</p></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<div class=\"container  ml-12 w-3/4 mt-40\"><span class=\"text-color-dim \">Hi my name is,</span><br><span class=\"primary-color text-5xl\" style=\"background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; color: transparent;\">Cole Flenniken.</span><br><span class=\"primary-color\">Building AI and Web Applications</span><p>I am a backend-focused software developer and AI engineer,  specializing in scalable and performant solutions.  My work includes anything from optimizing algorithms and developing neural networks.</p></div><div class=\" mx-auto w-1/1 justify-center mt-20\"><h2 class=\"text-color\"><b>Skills</b></h2></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

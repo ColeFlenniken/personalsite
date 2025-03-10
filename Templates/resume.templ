@@ -5,7 +5,7 @@ import ("strconv"
 "github.com/ColeFlenniken/personalsite/models")
 
 templ Job(jobs []models.Job) {
-    <div class="container mx-auto px-10 w-1/2">
+ 
             <h2 class="primary-color text-3xl mb-1"><b>Experience</b></h2>
             for i, job := range jobs {
                 <div id={"job-item" + strconv.Itoa(i)}>  
@@ -26,11 +26,11 @@ templ Job(jobs []models.Job) {
                 </div>
             } 
              
-    </div>
+ 
 }
 
 templ Education(educations []models.Education){
-    <div class="container mx-auto px-10 w-1/2">
+ 
             <h2 class="primary-color text-3xl mb-1"><b>Education</b></h2>
             for i, edu := range educations {
                 <div id={"edu-item" + strconv.Itoa(i)}>  
@@ -38,9 +38,15 @@ templ Education(educations []models.Education){
                     <div class="mt-2" style="">
                         <div class=""><b class="text-color">{edu.Degree + " "}</b><span class="primary-color text-base">{"@"+ edu.School}</span></div>
                     </div>
-                    <div>
+                </div>
+                <div>           
                         <span class="text-color-dim text-base">{edu.Date}</span>
-                    </div>
+
+                    
+                        <span class="primary-color text-base">{"GPA: " + edu.GPA}</span>
+                
+                </div>
+                <div>
                     <div class="mb-2 ml-6">
                         <ul>
                             for _, item := range edu.Points {
@@ -50,15 +56,16 @@ templ Education(educations []models.Education){
                     </div>
                 </div>
             } 
-            <div style="background-color:grey; height:1px; width:100%;"></div>
-    </div>
+ 
 }
  
 templ ResumePage(){
+     <div class="container mx-auto px-10 w-1/2 mb-20"> 
             <div >
                 @Job(models.Jobs)
             </div>
             <div class="mt-8">   
                 @Education(models.Educations)
             </div>
+    </div>   
 }
