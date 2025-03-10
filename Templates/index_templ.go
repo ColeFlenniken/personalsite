@@ -123,7 +123,7 @@ func SkillCard() templ.Component {
 			templ_7745c5c3_Var3 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<div class=\"skill-card\"><div class=\"skill-card-inner\"><div class=\"skill-card-front\"><img src=\"/static/img/c++logo.png\"></div><div class=\"skill-card-back\"><p>Programming Language</p></div></div></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<div class=\"skill-card\"><div class=\"skill-card-inner\"><div class=\"skill-card-front\"><img class=\"skill-card-front h-50 w-50 object-contain\" src=\"/static/img/c++logo.png\"></div><div class=\"skill-card-back\"><p>Programming Language</p></div></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
