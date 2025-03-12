@@ -66,31 +66,43 @@ func Index() templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<div class=\"container  ml-12 w-3/4 mt-40\"><span class=\"text-color-dim \">Hi my name is,</span><br><span class=\"primary-color text-5xl\" style=\"background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; color: transparent;\">Cole Flenniken.</span><br><span class=\"primary-color\">Building AI and Web Applications</span><p>I am a backend-focused software developer and AI engineer,  specializing in scalable and performant solutions.  My work includes anything from optimizing algorithms and developing neural networks.</p></div><div class=\" mx-auto w-1/1 justify-center mt-20\"><h2 class=\"text-color\"><b>Skills</b></h2><div class=\"grid grid-cols-5 gap-4\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<div class=\"container  ml-12 w-3/4 mt-40\"><span class=\"text-color-dim \">Hi my name is,</span><br><span class=\"primary-color text-5xl\" style=\"background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; color: transparent;\">Cole Flenniken.</span><br><span class=\"primary-color\">Building AI and Web Applications</span><p>I am a backend-focused software developer and AI engineer,  specializing in scalable and performant solutions.  My work includes anything from optimizing algorithms and developing neural networks.</p></div><div class=\" mx-auto w-1/1 justify-center mt-20\"><h2 class=\"text-color mx-auto\"><b>Skills</b></h2><div class=\"flex flex-wrap gap-5\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard().Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/Python-Emblem.png", "Programming Language").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard().Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/png-transparent-golang-hd-logo.png", "Programming Language").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard().Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/c++logo.png", "Programming Language").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard().Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/csslogo.png", "Styling Language").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard().Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/gitlogo.png", "Version Control").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard().Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/html-5-logo-png-transparent.png", "Markup Language").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = SkillCard("static/img/htmx-icon.png", "Web Framework").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = SkillCard("static/img/Microsoft_Azure.png", "Cloud Service").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = SkillCard("static/img/sql-database-generic-icon-1521x2048-d0vdpxpg.png", "Database").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -102,7 +114,7 @@ func Index() templ.Component {
 	})
 }
 
-func SkillCard() templ.Component {
+func SkillCard(imgPath string, skillName string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -123,7 +135,33 @@ func SkillCard() templ.Component {
 			templ_7745c5c3_Var3 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<div class=\"h-50 w-50 rounded-md bg-gray-700 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 shadow-lg hover:shadow-cyan-500/30\"><div class=\"mx-auto justify-items-center\"><img class=\"\" width=\"150\" src=\"https://i.pinimg.com/originals/a3/3f/3f/a33f3f15417a2afd5441e9325fa9a546.png\"></div><div style=\"background-color:white; height:1px; width:90%;\" class=\"mx-auto\"></div><div class=\"flex items-center justify-center h-10\"><span class=\"text-white\">Version Control</span></div></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<div class=\"h-50 w-50 flex-none rounded-md bg-transparent transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 shadow-lg hover:shadow-cyan-500/30\"><div class=\"mx-auto justify-items-center \"><img class=\"\" width=\"150\" src=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var4 string
+		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(imgPath)
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 62, Col: 42}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "\"> <span>")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var5 string
+		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(skillName)
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 63, Col: 20}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "</span></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
