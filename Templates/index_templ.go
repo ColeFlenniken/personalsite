@@ -70,39 +70,39 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard("static/img/Python-Emblem.png", "Programming Language", "40").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/Python-Emblem.png", "Python", "40").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard("static/img/png-transparent-golang-hd-logo.png", "Programming Language", "40").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/png-transparent-golang-hd-logo.png", "Go", "40").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard("static/img/c++logo.png", "Programming Language", "40").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/c++logo.png", "C++", "40").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard("static/img/csslogo.png", "Styling Language", "40").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/csslogo.png", "CSS", "40").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard("static/img/gitlogo.png", "Version Control", "40").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/gitlogo.png", "git", "40").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard("static/img/html-5-logo-png-transparent.png", "Markup Language", "40").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/html-5-logo-png-transparent.png", "HTML", "40").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard("static/img/htmx-icon.png", "Web Framework", "40").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/htmx-icon.png", "HTMX", "40").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard("static/img/Microsoft_Azure.png", "Cloud Service", "40").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/Microsoft_Azure.png", "Azure", "40").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard("static/img/sql-database-generic-icon-1521x2048-d0vdpxpg.png", "Database", "40").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/sql-database-generic-icon-1521x2048-d0vdpxpg.png", "SQL", "40").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -135,7 +135,7 @@ func SkillCard(imgPath string, skillName string, sizing string) templ.Component 
 			templ_7745c5c3_Var3 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<div class=\"h-50 w-50 flex-none p-2  bg-transparent rounded-md transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110  shadow-lg hover:shadow-cyan-500/30\"><div class=\"flex items-center justify-center h-full\"><img class=\"mr-2\" width=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<div class=\"h-50 w-50 flex-none p-2  bg-gray-500 rounded-md transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110  shadow-lg shadow-pink-500/30\"><div class=\"flex items-center justify-center h-full\"><img class=\"mr-2\" width=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
