@@ -43,24 +43,24 @@ templ Index() {
 	<div class=" mx-auto w-1/1 justify-center mt-20">
 		<h2 class="text-color mx-auto"><b>Skills</b></h2>
 		<div class="flex flex-wrap gap-5">
-			@SkillCard("static/img/Python-Emblem.png", "Programming Language")
-			@SkillCard("static/img/png-transparent-golang-hd-logo.png", "Programming Language")
-			@SkillCard("static/img/c++logo.png", "Programming Language")
-			@SkillCard("static/img/csslogo.png", "Styling Language")
-			@SkillCard("static/img/gitlogo.png", "Version Control")
-			@SkillCard("static/img/html-5-logo-png-transparent.png", "Markup Language")
-			@SkillCard("static/img/htmx-icon.png", "Web Framework")
-			@SkillCard("static/img/Microsoft_Azure.png", "Cloud Service")
-			@SkillCard("static/img/sql-database-generic-icon-1521x2048-d0vdpxpg.png", "Database")
+			@SkillCard("static/img/Python-Emblem.png", "Programming Language", "40")
+			@SkillCard("static/img/png-transparent-golang-hd-logo.png", "Programming Language", "40")
+			@SkillCard("static/img/c++logo.png", "Programming Language", "40")
+			@SkillCard("static/img/csslogo.png", "Styling Language", "40")
+			@SkillCard("static/img/gitlogo.png", "Version Control", "40")
+			@SkillCard("static/img/html-5-logo-png-transparent.png", "Markup Language", "40")
+			@SkillCard("static/img/htmx-icon.png", "Web Framework", "40")
+			@SkillCard("static/img/Microsoft_Azure.png", "Cloud Service", "40")
+			@SkillCard("static/img/sql-database-generic-icon-1521x2048-d0vdpxpg.png", "Database", "40")
 		</div>
 	</div>
 }
 
-templ SkillCard(imgPath string, skillName string) {
-	<div class="h-50 w-50 flex-none rounded-md bg-transparent transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 shadow-lg hover:shadow-cyan-500/30">
-		<div class="mx-auto justify-items-center ">
-			<img class="" width="150" src={ imgPath }/>
-			<span>{ skillName }</span>
+templ SkillCard(imgPath string, skillName string, sizing string) {
+	<div class="h-50 w-50 flex-none p-2  bg-transparent rounded-md transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110  shadow-lg hover:shadow-cyan-500/30">
+		<div class="flex items-center justify-center h-full">
+			<img class="mr-2" width={ sizing } src={ imgPath }/>
+			<span class="text-color">{ skillName }</span>
 		</div>
 	</div>
 }
