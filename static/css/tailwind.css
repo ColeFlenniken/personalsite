@@ -653,6 +653,10 @@ video {
   margin-right: 0.5rem;
 }
 
+.mb-40 {
+  margin-bottom: 10rem;
+}
+
 .flex {
   display: flex;
 }
@@ -707,6 +711,10 @@ video {
 
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .flex-wrap {
@@ -839,6 +847,11 @@ video {
 
 .shadow-pink-500\/30 {
   --tw-shadow-color: rgb(236 72 153 / 0.3);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-blue-300\/50 {
+  --tw-shadow-color: rgb(147 197 253 / 0.5);
   --tw-shadow: var(--tw-shadow-colored);
 }
 
