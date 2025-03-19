@@ -66,7 +66,11 @@ func Index() templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<section class=\"mb-20\"><div class=\"container  ml-12 w-3/4 mt-40\"><span class=\"text-color-dim \">Hi my name is,</span><br><span class=\"primary-color text-5xl\" style=\"background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; color: transparent;\">Cole Flenniken.</span><br><span class=\"primary-color\">Building AI and Web Applications</span><p>I am a backend-focused software developer and AI engineer,  specializing in scalable and performant solutions.  My work includes anything from optimizing algorithms and developing neural networks.</p></div></section><div class=\"grid grid-cols-5 gap-4\"><div class=\" mx-auto w-1/1 justify-center mt-50 col-span-1\"><div class=\"grid grid-cols-1 gap-2 justify-center\"><h2 class=\"primary-color text-3xl mb-1 mx-auto\"><b>Work</b></h2><div style=\"background-color:grey; height:1px; width:100%;\"></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<section class=\"mb-20\"><div class=\"container  ml-12 w-3/4 mt-40\"><span class=\"text-color-dim \">Hi my name is,</span><br><span class=\"primary-color text-5xl\" style=\"background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; color: transparent;\">Cole Flenniken.</span><br><span class=\"primary-color\">Building AI and Web Applications</span><p>I am a backend-focused software developer and AI engineer,  specializing in scalable and performant solutions.  My work includes anything from optimizing algorithms and developing neural networks.</p></div></section><div class=\"grid grid-cols-5 gap-4\"><div class=\" mx-auto w-1/1 justify-center mt-50 col-span-1\"><div class=\"grid grid-cols-1 gap-2 justify-center\"><h2 class=\"primary-color text-3xl mb-1 mx-auto\"><b>Languages</b></h2><div style=\"background-color:grey; height:1px; width:100%;\"></div>")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = SkillCard("static/img/C#.png", "C#/.Net", "50").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -74,7 +78,7 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard("static/img/png-transparent-golang-hd-logo.png", "Go", "40").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/golang.png", "Go", "40").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -86,19 +90,7 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard("static/img/gitlogo.png", "git", "50").Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
 		templ_7745c5c3_Err = SkillCard("static/img/html-5-logo-png-transparent.png", "HTML", "40").Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = SkillCard("static/img/htmx-icon.png", "HTMX", "40").Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = SkillCard("static/img/Microsoft_Azure.png", "Azure", "40").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -114,23 +106,7 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "</div><div class=\" mx-auto w-1/1 justify-center mt-50 col-span-1\"><h2 class=\"primary-color text-3xl mb-1 mx-auto\"><b>Play</b></h2><div style=\"background-color:grey; height:1px; width:100%;\"></div><div class=\"grid grid-cols-1 gap-2 justify-center\">")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = SkillCard("static/img/Python-Emblem.png", "Python", "50").Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = SkillCard("static/img/png-transparent-golang-hd-logo.png", "Go", "40").Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = SkillCard("static/img/c++logo.png", "C++", "30").Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = SkillCard("static/img/csslogo.png", "CSS", "40").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "</div><div class=\" mx-auto w-1/1 justify-center mt-50 col-span-1\"><div class=\"grid grid-cols-1 gap-2 justify-center\"><h2 class=\"primary-color text-3xl mb-1 mx-auto\"><b>Tech</b></h2><div style=\"background-color:grey; height:1px; width:100%;\"></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -138,7 +114,7 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard("static/img/html-5-logo-png-transparent.png", "HTML", "40").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/blazor-logo.png", "Blazor", "50").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -150,7 +126,7 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = SkillCard("static/img/sql-database-generic-icon-1521x2048-d0vdpxpg.png", "SQL", "40").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = SkillCard("static/img/rag.webp", "RAG", "40").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -183,14 +159,14 @@ func SkillCard(imgPath string, skillName string, sizing string) templ.Component 
 			templ_7745c5c3_Var3 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "<div class=\"h-50 w-50 flex-none p-2 rounded-md transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110  shadow-lg\" style=\"box-shadow: 0 4px 10px rgba(132, 164, 252, 0.7);\"><div class=\"flex items-center justify-center h-full\"><img class=\"mr-2\" width=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "<div class=\" bg-grey h-50 w-50 m-4 flex-none p-2 rounded-md transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110  shadow-lg\" style=\"\"><div class=\"flex items-center justify-center h-full\"><img class=\"mr-2\" width=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var4 string
 		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(sizing)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 85, Col: 35}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 79, Col: 35}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 		if templ_7745c5c3_Err != nil {
@@ -203,7 +179,7 @@ func SkillCard(imgPath string, skillName string, sizing string) templ.Component 
 		var templ_7745c5c3_Var5 string
 		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(imgPath)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 85, Col: 51}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 79, Col: 51}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 		if templ_7745c5c3_Err != nil {
@@ -216,7 +192,7 @@ func SkillCard(imgPath string, skillName string, sizing string) templ.Component 
 		var templ_7745c5c3_Var6 string
 		templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(skillName)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 86, Col: 39}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `Templates/index.templ`, Line: 80, Col: 39}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
 		if templ_7745c5c3_Err != nil {
