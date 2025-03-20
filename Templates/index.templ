@@ -44,7 +44,7 @@ templ Index() {
 	</section>
 	<div class="grid grid-cols-5 gap-4">
 		<div class=" mx-auto w-1/1 justify-center mt-50 col-span-1">
-			<div class="grid grid-cols-1 gap-2 justify-center">
+			<div class="grid grid-cols-1 gap-2">
 				<h2 class="primary-color text-3xl mb-1 mx-auto"><b>Languages</b></h2>
 				<div style="background-color:grey; height:1px; width:100%;"></div>
 				@SkillCard("static/img/C#.png", "C#/.Net", "50")
@@ -52,19 +52,19 @@ templ Index() {
 				@SkillCard("static/img/golang.png", "Go", "40")
 				@SkillCard("static/img/c++logo.png", "C++", "30")
 				@SkillCard("static/img/csslogo.png", "CSS", "40")
-				@SkillCard("static/img/html-5-logo-png-transparent.png", "HTML", "40")
-				@SkillCard("static/img/sql-database-generic-icon-1521x2048-d0vdpxpg.png", "SQL", "40")
+				@SkillCard("static/img/html-5-logo-png-transparent.png", "HTML", "25")
+				@SkillCard("static/img/sql-database-generic-icon-1521x2048-d0vdpxpg.png", "SQL", "25")
 			</div>
 		</div>
 		<div class="col-span-3">
 			@ResumePage()
 		</div>
 		<div class=" mx-auto w-1/1 justify-center mt-50 col-span-1">
-			<div class="grid grid-cols-1 gap-2 justify-center">
+			<div class="grid grid-cols-1 gap-2">
 				<h2 class="primary-color text-3xl mb-1 mx-auto"><b>Tech</b></h2>
 				<div style="background-color:grey; height:1px; width:100%;"></div>
 				@SkillCard("static/img/gitlogo.png", "git", "50")
-				@SkillCard("static/img/blazor-logo.png", "Blazor", "50")
+				@SkillCard("static/img/blazor-logo.png", "Blazor", "35")
 				@SkillCard("static/img/htmx-icon.png", "HTMX", "40")
 				@SkillCard("static/img/Microsoft_Azure.png", "Azure", "40")
 				@SkillCard("static/img/rag.webp", "RAG", "40")
@@ -74,7 +74,7 @@ templ Index() {
 }
 
 templ SkillCard(imgPath string, skillName string, sizing string) {
-	<div class=" bg-grey h-50 w-50 m-4 flex-none p-2 rounded-md transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110  shadow-lg" style="">
+	<div class=" bg-grey h-50 w-50 m-4 flex-none p-2 rounded-md transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110  shadow-lg" style="background: gray;">
 		<div class="flex items-center justify-center h-full">
 			<img class="mr-2" width={ sizing } src={ imgPath }/>
 			<span class="text-color">{ skillName }</span>
